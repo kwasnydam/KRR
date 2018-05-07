@@ -1,0 +1,20 @@
+strips_rule(stack(X,Y), % name and arguments
+    [holding(X), clear(Y)], % list of conditions
+    [on(X,Y), clear(X), handempty], % list of added facts
+    [clear(Y), holding(X)]). % list of removed
+
+%TODO: ACTION II 
+strips_rule(remove(X,Y), % name and arguments
+    [handempty, clear(X), on(X,Y)], % list of conditions
+    [holding(X), clear(Y)], % list of added facts
+    [clear(X), handempty]). % list of removed
+%TODO: ACTION III 
+strips_rule(put_table(X), % name and arguments
+    [holding(X)], % list of conditions
+    [ontable(X), clear(X), handempty], % list of added facts
+    [holding(X)]). % list of removed
+%TODO: ACTION IV
+strips_rule(off_table(X), % name and arguments
+    [handempty, clear(X), ontable(X)], % list of conditions
+    [holding(X)], % list of added facts
+    [handempty, clear(X), ontable(X)]). % list of removed
