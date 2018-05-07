@@ -1,0 +1,6 @@
+﻿(define (problem hard)
+  (:domain blocksworld)
+  (:objects a b c)
+  (:init (on a c) (ontable b) (ontable c) (clear a) (clear b) (handempty))
+  (:goal (and (on b c) (on a b)))
+)
